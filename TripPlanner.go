@@ -107,16 +107,16 @@ const (
 )
 
 func connectMongo() {
-	//uri := "mongodb://arpit9691:Arpit#9691@ds043694.mongolab.com:43694/location_db"
-	uri := "mongodb://nipun:nipun@ds045464.mongolab.com:45464/db2"
+	uri := "mongodb://arpit9691:Arpit#9691@ds043694.mongolab.com:43694/location_db"
+	//uri := "mongodb://nipun:nipun@ds045464.mongolab.com:45464/db2"
 	ses, err := mgo.Dial(uri)
 
 	if err != nil {
 		fmt.Printf("Can't connect to mongo, go error %v\n", err)
 	} else {
 		ses.SetSafe(&mgo.Safe{})
-		//collection = ses.DB("location_db").C("test")
-		collection = ses.DB("db2").C("qwerty")
+		collection = ses.DB("location_db").C("test")
+		//collection = ses.DB("db2").C("qwerty")
 	}
 }
 
